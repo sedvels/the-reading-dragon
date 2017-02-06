@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The new reading experience</title>
+	<link type="text/css" rel="stylesheet" href="css/lightslider.css" />
+	<link rel="stylesheet" href="css/app.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Passion+One:400,700" rel="stylesheet">
+</head>
+<body>
+	<header id="" class="container">
+		<div class="container-menu">
+			<nav id="main-menu" class="container menu-nav">
+				<ul class="">
+					<li class="menu-item"><a href="" class=""><span>What is it?</span></a></li>
+					<li class="menu-item"><a href="" class=""><span>The Experience</span></a></li>
+					<li class="menu-item"><a href="" class=""><span>The Book</span></a></li>
+					<li class="menu-item"><a href="" class=""><span>FAQ</span></a></li>
+					<!-- <li class="menu-item"><a href="" class=""><span>Subscribe</span></a></li>
+					<li class="menu-item"><a href="" class=""><span>Give a Gift</span></a></li> -->
+				</ul>
+			</nav>
+		</div>
+		<div id="header-slider" class="">
+			<ul id="lightSlider">
+				<li class="slide-item">
+					<img src="img/books-pile.jpg" alt="Book Pile" class="img-slider">
+				</li>
+				<li class="slide-item">
+					<img src="img/book-and-cup.jpeg" alt="Book And Cup" class="img-slider">
+				</li>
+				<li class="slide-item">
+					<img src="img/love-read.jpg" alt="I Love to Read" class="img-slider">
+				</li>
+			</ul>
+			<figure class="container-logo"><img class="logo" src="img/logo-dragon.png" alt="Logo Dragon"></figure>
+		</div>
+		<h1 class="titles landing-titles main-title">The Reading Dragon</h1>
+		<h2 class="titles landing-titles secondary-title">The new Reading Experience</h2>
+	</header>
+	<section class="container">
+		<div class="register">
+			<a href="" class="button">Subscribe</a>
+			<a href="" class="button">Give a Gift</a>
+		</div>
+	</section>
+	<footer class="">
+		<div class="container contact-title">
+			<p class="contact">Contact Us</p>
+		</div>
+		<!-- <div class="share-button">
+			<a href="https://twitter.com/messages/compose?recipient_id=2870742393"
+  				class="twitter-dm-button" data-screen-name="@thereadingdragon" target="_blank">
+  				Message @thereadingdragon
+  			</a>
+		</div> -->
+
+		<div class="container share-buttons-menu">
+			<ul class="social-menu">
+				<li class="contact-button">
+					<!-- Twitter -->
+					<a href="https://twitter.com/share?url=http://thereadingdragon.co.uk&amp;text=The%20Reading%20Dragon&amp;hashtags=thereadingdragon" target="_blank">
+						<img src="img/twitter.png" alt="Twitter" />
+					</a>
+				</li>
+				<li class="contact-button">
+					<!-- Facebook -->
+					<a href="http://www.facebook.com/sharer.php?u=http://thereadingdragon.co.uk" target="_blank">
+						<img src="img/facebook.png" alt="Facebook" />
+					</a>
+				</li>
+				<li class="contact-button">
+					<!-- Google+ -->
+					<a href="https://plus.google.com/share?url=http://thereadingdragon.co.uk" target="_blank">
+						<img src="img/google.png" alt="Google" />
+					</a>
+				</li>
+				<li class="contact-button">
+					<!-- LinkedIn -->
+					<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://thereadingdragon.co.uk" target="_blank">
+						<img src="img/linkedin.png" alt="LinkedIn" />
+					</a>
+				</li>
+				<li class="contact-button">
+					<!-- Pinterest -->
+					<a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+						<img src="img/pinterest.png" alt="Pinterest" />
+					</a>
+				</li>
+				<li class="contact-button">
+					<!-- Email -->
+					<a href="mailto:?Subject=Hello The%20Reading%20Dragon&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 http://thereadingdragon.com">
+						<img src="img/email.png" alt="Email" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="container end-salutation">
+			<span class="">
+				<quote class="">"I'm not a bookworm, I'm a book dragon"</quote>
+			</span
+		></div>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/lightslider.js"></script>
+	<script type="text/javascript">
+		// Loading fonts from WebFont Google
+		WebFont.load({
+			google: {
+				families: ['Libre Baskerville:400,700', 'Passion One:400,700']
+			}
+		});
+		
+		// Config slider
+		$(document).ready(function() {
+			$("#lightSlider").lightSlider({
+				loop:true,
+				keyPress:true,
+				auto: true,
+				speed: 500,
+				item: 1,
+				pause: 3000,
+				mode: 'fade',
+				currentPagerPosition: 'middle',
+				addClass: 'container-slider'
+            }); 
+		});
+	</script>
+</body>
+</html>
