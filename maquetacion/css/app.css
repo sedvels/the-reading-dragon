@@ -108,10 +108,83 @@ a {
 
 #header-image {
 	background-image: url('../img/book-and-cup.jpeg');
+	background-position-y: -100px;
 	background-size: cover;
-	/*border: 2px solid blue;*/
 	position: relative;
-	height: 100vh;
+	height: 600px;
+}
+
+header {
+	top: 0;
+	height: 380px;
+	position: absolute;
+	width: 100vw;
+}
+
+header .titles {
+	bottom: 0;
+	left: 25px;
+	position: absolute;
+	z-index: 1;
+}
+
+.titles > * {
+	color: white;
+	text-align: left;
+}
+
+.main-title {
+	font-size: 50px;
+	margin-top: 15px;
+}
+
+.secondary-title {
+	font-size: 20px;
+}
+
+.container-menu {
+	position: absolute;
+	right: 0;
+	width: 100%;
+	z-index: 200;
+	/*sdisplay: none;*/
+}
+.menu-nav {
+	background-color: #754913;
+	position: relative;
+	top: 20px;
+}
+
+.menu-nav ul {
+	float: right;
+	margin-right: 45px;
+}
+
+.menu-nav .menu-item {
+	/*border-radius: 10px 10px 0 0;*/
+	/*border-top: 4px solid rgba(0,0,0,0);*/
+	/*border-bottom: 3px solid white;
+	border-top: 3px solid white;*/
+	display: inline-block;
+	padding: 10px 5px;
+}
+
+.menu-nav .menu-item:hover span{
+	color: #C3955C;
+	transition: all .5s ease; 
+}
+
+.menu-nav .menu-item a {
+	padding: 8px;
+}
+
+.menu-nav .menu-item a span {
+	font-stretch: condensed;
+	font-weight: bold;
+	font-size: 16px;
+	
+	/*color: #0D1D32;*/
+
 }
 
 .container-logo {
@@ -134,91 +207,6 @@ a {
 	line-height: 140px;
 	text-align: center;
 	width: 100%;
-}
-
-header {
-	top: 0;
-	height: 50vh;
-	position: absolute;
-	width: 100vw;
-}
-
-header .titles {
-	bottom: -10vh;
-    left: 6vw;
-    position: absolute;
-}
-
-.titles > * {
-	color: white;
-	/*font-family: 'Passion One', cursive;*/
-	text-align: center;
-}
-
-.main-title {
-	font-size: 50px;
-	margin-top: 15px;
-}
-
-.secondary-title {
-	font-size: 20px;
-}
-
-.container-menu {
-	sbackground: #ecc494; /* Old browsers */
-	sbackground: -moz-linear-gradient(left,  #ecc494 31%, #a07034 65%, #a07034 65%, #754913 100%); /* FF3.6-15 */
-	sbackground: -webkit-linear-gradient(left,  #ecc494 31%,#a07034 65%,#a07034 65%,#754913 100%); /* Chrome10-25,Safari5.1-6 */
-	sbackground: linear-gradient(to right,  #ecc494 31%,#a07034 65%,#a07034 65%,#754913 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	sfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecc494', endColorstr='#754913',GradientType=1 ); /* IE6-9 */
-	padding: 1px;
-	position: fixed;
-	right: 0;
-	width: 100%;
-	z-index: 200;
-	/*sdisplay: none;*/
-}
-.menu-nav {
-	background-color: #754913;
-	position: relative;
-	top: 50px;
-}
-
-.menu-nav ul {
-	float: right;
-}
-
-.menu-nav .menu-item {
-	border-radius: 10px 10px 0 0;
-	border-top: 4px solid rgba(0,0,0,0);
-	display: inline-block;
-	padding: 10px 0px;
-}
-
-.menu-nav .menu-item:before {
-	font-size: 25px;
-	line-height: 10px;
-	color: white;
-	content: "|";  /* □ */
-	/*margin-right: -10px;*/
-}
-
-.menu-nav .menu-item:first-child:before {
-	content: none;  /* □ */
-	/*margin-right: -10px;*/
-}
-
-.menu-nav .menu-item:hover span{
-	border-bottom: 4px solid white;
-	background-color: #C3955C;
-	transition: all .5s ease; 
-}
-
-.menu-nav .menu-item a {
-	padding: 15px;
-}
-
-.menu-nav .menu-item a span {
-	font-size: 1.5em;
 }
 
 .icon-a {
