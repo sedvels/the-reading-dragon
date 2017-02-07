@@ -13,10 +13,10 @@
 			<div class="container-menu">
 				<nav id="main-menu" class="menu-nav">
 					<ul class="">
-						<li class="menu-item text"><a href="" ><span>What is it?</span></a></li>
-						<li class="menu-item text"><a href="" ><span>The Experience</span></a></li>
-						<li class="menu-item text"><a href="" ><span>The Book</span></a></li>
-						<li class="menu-item text"><a href="" ><span>FAQ</span></a></li>
+						<li id="to-whatitis" class="menu-item text"><a class="int-link" href="./#what-it-is" ><span>What is it?</span></a></li>
+						<li id="to-experience" class="menu-item text"><a class="int-link" href="./#experience" ><span>The Experience</span></a></li>
+						<li id="to-book" class="menu-item text"><a class="int-link" href="./#the-book" ><span>The Book</span></a></li>
+						<li id="to-whatitis" class="menu-item text"><a class="int-link" href="" ><span>FAQ</span></a></li>
 						<li class="menu-item"><a href="" ><span class="icon-user"></span></a></li>
 						<!-- <li class="menu-item"><a href="" class=""><span>Subscribe</span></a></li>
 						<li class="menu-item"><a href="" class=""><span>Give a Gift</span></a></li> -->
@@ -38,23 +38,45 @@
 	<section class="container">
 		<div class="register">
 			<div>
-				<a href="" class="normal-button">
+				<a href="" class="normal-button special-transition">
 					<div class="normal-button-text">Subscribe</div>
-					<div class="normal-button-background"></div>
+					<div class="normal-button-background special-transition-background"></div>
 				</a>
 			</div>
 			<div>
-				<a href="" class="normal-button">
+				<a href="" class="normal-button special-transition">
 					<div class="normal-button-text">Give a Gift</div>
-					<div class="normal-button-background"></div>
+					<div class="normal-button-background special-transition-background"></div>
 				</a>
 				<div class="icon-gift"></div>
 			</div>
 		</div>
 	</section>
+	<section id="what-it-is" class="container content">
+		<article class="container column1">
+			<h3><strong>What Is It?</strong></h3>
+			<p>The <strong>Reading Dragon</strong> is a literary susbscription which will take you on an incredible and unique reading <a href="./#experience" class="internal-link">experience</a>.
+			</p>
+			<p>Pay 20 a month and receive a surprise box that will enhance your reading moments.</p>
+		</article>
+	</section>
+	<section id="experience" class="container content">
+		<article class="container column2 left">
+			<h3><strong>The Experience</strong></h3>
+			<p>Monthly you will receive a newly published <a href="./#the-book" class="internal-link">book</a> which arrives in bookstores at the same time that your box.
+			</p>
+			<p>The box contains a map of the reading experience to guideyou though the pages of each book.</p>
+			<p>You will also rceive a couple of goodies that will enhance the experience.</p>
+		</article>
+		<aside class="container column2 right">
+			<figure class="frame-img">
+				<img src="img/love-read.jpg" alt="I Love Reading">
+			</figure>
+		</aside>
+	</section>
 	<footer class="">
 		<div class="container contact-title">
-			<p class="contact">Contact Us</p>
+			<h4 class="contact">Contact Us</h4>
 		</div>
 		<!-- <div class="share-button">
 			<a href="https://twitter.com/messages/compose?recipient_id=2870742393"
@@ -120,20 +142,24 @@
 			}
 		});
 		
-		// Config slider
-		$(document).ready(function() {
-			$("#lightSlider").lightSlider({
-				loop:true,
-				keyPress:true,
-				auto: true,
-				speed: 500,
-				item: 1,
-				pause: 3000,
-				mode: 'fade',
-				currentPagerPosition: 'middle',
-				addClass: 'container-slider'
-            }); 
-		});
+		// slow transition to anchor
+		var $items = $('body').find('a[href*="#"]');
+		$items.on('click', function(ev){
+			var href = $(this).map(function(index, elem) {
+				return elem.hash;
+			});
+			$('html, body').animate({
+				scrollTop: $(href[0]).offset().top
+			}, 1000);
+		})
+		
+		$(window).scroll(function(){
+        if ($(window).scrollTop() > 100){
+            // $('.ufo').css('right','800px');
+            // do somthing
+        }
+    });
+
 	</script>
 </body>
 </html>

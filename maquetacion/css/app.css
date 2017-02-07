@@ -65,45 +65,25 @@ a, a * {
 	text-transform: uppercase;
 }
 
-.normal-button {
-  display: inline-block;
-  /*border: 2px solid red;*/
-  border-radius: 10px;
-  background-color: rgba(0,0,0,0);
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  padding: 10px 20px;
-  transition: 1s ease;
+h1 {
+	font-size: 50px;
 }
 
-.normal-button-background {
-  position: absolute;
-  top: 0;
-  left: -250%;
-  width: 400%;
-  height: 100%;
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#754913+0,a07034+25,ecc494+50,a07034+75,754913+100 */
-	background: -moz-linear-gradient(left,  #754913 0%, #a07034 25%, #ecc494 50%, #a07034 75%, #754913 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(left,  #754913 0%,#a07034 25%,#ecc494 50%,#a07034 75%,#754913 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to right,  #754913 0%,#a07034 25%,#ecc494 50%,#a07034 75%,#754913 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	cursor: pointer;
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#754913', endColorstr='#754913',GradientType=1 ); /* IE6-9 */
-	transition: all 1s ease;
-  z-index: -1;
+h2 {
+	font-size: 25px;
 }
 
-.normal-button:hover {
-  transform: rotateY(-10deg);
-  transition: 1s ease;
-}
-.normal-button:hover > .normal-button-background {
-  left: 0;
-  transition: 1s ease;
+h3 {
+	font-size: 30px;
 }
 
-.container {
+h4 {
+	font-size: 18px;
+}
+
+container {
 	width: 1000px;
+	padding: ;
 	position: relative;
 }
 
@@ -145,15 +125,14 @@ header .titles {
 
 .container-menu {
 	position: absolute;
-	right: 0;
-	width: 100%;
-	z-index: 200;
-	/*sdisplay: none;*/
+    right: 0;
+    width: 100%;
+    z-index: 200;
+    height: 45px;
 }
 .menu-nav {
-	background-color: #754913;
 	position: relative;
-	top: 20px;
+	height: 100%;
 }
 
 .menu-nav ul {
@@ -231,11 +210,97 @@ header .titles {
 
 .register .icon-gift {
     color: #82B7B3;
+    display: none;
     font-size: 2em;
 	position: absolute;
     right: -10px;
     transform: rotate(40deg);
     top: -15px;
+}
+
+
+/**
+ * CONFIGURATION CONTENT SECTIONS
+ */
+
+p, p > * {
+	font-size: 20px;
+}
+
+p {
+	padding: 20px 0;
+	text-align: justify;
+}
+
+p a {
+	color: #0D1D32;
+	font-style: italic;
+	text-transform: unset;
+	text-decoration: underline;
+	transition: .5s ease;
+}
+
+p a:hover {
+	color: #754913;
+	transition: .5s ease;
+}
+
+strong {
+	font-size: inherit;
+}
+
+.content {
+	padding: 45px 0 15px;
+	position: relative;
+	text-align: center;
+}
+
+.content article {
+	/*border: 2px solid green; */
+	display: inline-block;
+	margin: 0 auto;
+	padding: 25px;
+	position: initial;
+	text-align: initial;
+}
+
+section#what-it-is {
+	background-color: #82B7B3;
+	/*border: 2px solid red;*/
+}
+
+.column1 {
+	position: initial;
+	/*border: 2px solid green; */
+	display: inline-block;
+	margin: 0 auto;
+	text-align: initial;
+	padding: 25px;
+	width: 900px;
+}
+
+.column2 {
+	/*border: 2px solid blue; */
+	display: inline-block;
+	height: 400px;
+	margin-left: 40px;
+	position: relative;
+	padding: 0px;
+	width: 450px;
+}
+
+.column2 > figure {
+	height: 100%;
+	overflow: hidden;
+	vertical-align: middle;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.column2 > figure > img {
+	height: 95%;
+	width: 95%;
 }
 
 footer {
@@ -248,7 +313,6 @@ footer {
 
 footer * {
 	color: white;
-
 }
 
 footer > div {
@@ -274,7 +338,56 @@ footer .contact {
 	transition: all .5s ease;
 }
 
+.internal-link {
+	transition: .5s ease;
+}
 
+.internal-link:hover {
+	color: white;
+	transition: .5s ease;
+}
+
+/**
+ * SPECIALS CONFIGURATIONS
+ */
+
+.normal-button {
+	display: inline-block;
+	/*border: 2px solid red;*/
+	border-radius: 10px;
+	background-color: rgba(0,0,0,0);
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	padding: 10px 20px;
+	transition: 1s ease;
+}
+
+.normal-button-background {
+	position: absolute;
+	top: 0;
+	left: -250%;
+	width: 400%;
+	height: 100%;
+	background: -moz-linear-gradient(left,  #754913 0%, #04101F 25%, #ecc494 50%, #a07034 75%, #754913 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  #754913 0%,#a07034 25%,#ecc494 50%,#a07034 75%,#754913 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  #754913 0%,#a07034 25%,#ecc494 50%,#a07034 75%,#754913 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	cursor: pointer;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#754913', endColorstr='#754913',GradientType=1 ); /* IE6-9 */
+	transition: all 1s ease;
+	z-index: -1;
+}
+
+.special-transition:hover {
+	transform: rotateY(-10deg);
+	transition: 1s ease;
+}
+.special-transition:hover > .special-transition-background {
+	left: 0;
+	transition: 1s ease;
+}
+
+.
 
 
 
