@@ -1,5 +1,6 @@
 * {
 	/*border: 2px solid red;*/
+	color: #0D1D32;
 	font-family: 'Libre Baskerville', serif;
 	font-size: 14px;
 	margin: 0 auto;
@@ -58,7 +59,7 @@ body {
 /**
  *  MAIN PAGE
  */
-a {
+a, a * {
 	color: white;
 	cursor: pointer;
 	text-transform: uppercase;
@@ -161,15 +162,16 @@ header .titles {
 }
 
 .menu-nav .menu-item {
-	/*border-radius: 10px 10px 0 0;*/
-	/*border-top: 4px solid rgba(0,0,0,0);*/
-	/*border-bottom: 3px solid white;
-	border-top: 3px solid white;*/
 	display: inline-block;
-	padding: 10px 5px;
+	padding: 5px 10px 0;
 }
 
-.menu-nav .menu-item:hover span{
+.icon-user {
+	font-size: 35px !important;
+	/*position: absolute;*/
+}
+
+.menu-nav .menu-item.text:hover span{
 	color: #C3955C;
 	transition: all .5s ease; 
 }
@@ -182,9 +184,6 @@ header .titles {
 	font-stretch: condensed;
 	font-weight: bold;
 	font-size: 16px;
-	
-	/*color: #0D1D32;*/
-
 }
 
 .container-logo {
@@ -242,11 +241,14 @@ header .titles {
 footer {
 	background-color: #0D1D32;
 	bottom: 0;
-	color: white;
 	padding: 8px;
-	position: relative;
 	width: 100%;
 	z-index: 200;
+}
+
+footer * {
+	color: white;
+
 }
 
 footer > div {
