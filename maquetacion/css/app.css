@@ -141,6 +141,11 @@ a {
 	/*margin-right: -10px;*/
 }
 
+.menu-nav .menu-item:first-child:before {
+	content: none;  /* □ */
+	/*margin-right: -10px;*/
+}
+
 .menu-nav .menu-item:hover {
 	background-color: #C3955C;
 	border-top: 4px solid #82B7B3;
@@ -257,8 +262,8 @@ a {
     vertical-align: middle;
 }
 
-.register a {
-	font-size: 
+.register a * {
+	font-size: 1.5rem;
 }
 
 .register .icon-gift {
