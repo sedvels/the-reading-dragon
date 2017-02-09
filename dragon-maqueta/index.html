@@ -205,7 +205,7 @@
 		const $nav = $containerMenu.find('nav');
 		const $register = $containerMenu.find('.register');
 		const $menuEffect = $('#menu-effect');
-		// const $itemIconUser = 
+		const $itemIconUser = $menuEffect.find('li').has('.icon-user');
 		const $backToTop = $('#back-to-top');
 		
 
@@ -213,9 +213,10 @@
 		window.addEventListener("scroll",function(e){
 			posY = window.scrollY;
 			if (posY < 80) {
-				$backToTop.hide()
+				$backToTop.fadeOut()
 				$register.removeAttr('style')
 				$menuEffect.removeAttr('style').show()
+				$itemIconUser.removeAttr('style')
 			}
 
 			if (posY >= 80 && posY < 100) {
@@ -227,10 +228,13 @@
 				$menuEffect.css({
 					'background-color':'#0D1D32',
 					'height': '60px',
-					'opacity': '.5'
+					'opacity': '.7'
 				}).hide()
 				$containerMenu.removeAttr('style').show()
-				// 	.off( "mouseenter mouseleave" );
+				$itemIconUser
+					.css({
+						'padding-left': '280px'
+					});
 			}
 
 			if (posY >= 100){
@@ -262,8 +266,8 @@
 				/* Stuff to do when the mouse enters the element */
 				if (posY >= 200) {
 					$menuEffect
-						.slideDown()
 						.stop(true, true)
+						.fadeIn()
 				}
 			}, function() {
 				/* Stuff to do when the mouse leaves the element */
