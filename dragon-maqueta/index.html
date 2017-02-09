@@ -11,32 +11,34 @@
 	<section class="cover-page">
 		<header>
 			<div id="container-menu" class="container-menu">
-				<div class="register">
-					<div>
-						<a  class="button normal-button special-transition">
-							<div class="normal-button-text">Subscribe</div>
-							<div class="normal-button-background special-transition-background trans-bck"></div>
-						</a>
+				<div id="menu-effect">
+					<div class="register">
+						<div>
+							<a  class="button normal-button special-transition">
+								<div class="normal-button-text">Subscribe</div>
+								<div class="normal-button-background special-transition-background trans-bck"></div>
+							</a>
+						</div>
+						<div>
+							<a  class="button normal-button special-transition">
+								<div class="normal-button-text">Give a Gift</div>
+								<div class="normal-button-background special-transition-background trans-bck"></div>
+							</a>
+							<div class="icon-gift"></div>
+						</div>
 					</div>
-					<div>
-						<a  class="button normal-button special-transition">
-							<div class="normal-button-text">Give a Gift</div>
-							<div class="normal-button-background special-transition-background trans-bck"></div>
-						</a>
-						<div class="icon-gift"></div>
-					</div>
+					<nav id="main-menu" class="menu-nav">
+						<ul class="">
+							<li id="to-whatitis" class="menu-item text"><a class="int-link" href="./#what-it-is" ><span>What is it?</span></a></li>
+							<li id="to-experience" class="menu-item text"><a class="int-link" href="./#experience" ><span>The Experience</span></a></li>
+							<li id="to-book" class="menu-item text"><a class="int-link" href="./#the-book" ><span>The Book</span></a></li>
+							<li id="to-whatitis" class="menu-item text"><a class="int-link" href="" ><span>FAQ</span></a></li>
+							<li class="menu-item"><a href="" ><span class="icon-user"></span></a></li>
+							<!-- <li class="menu-item"><a href="" class=""><span>Subscribe</span></a></li>
+							<li class="menu-item"><a href="" class=""><span>Give a Gift</span></a></li> -->
+						</ul>
+					</nav>
 				</div>
-				<nav id="main-menu" class="menu-nav">
-					<ul class="">
-						<li id="to-whatitis" class="menu-item text"><a class="int-link" href="./#what-it-is" ><span>What is it?</span></a></li>
-						<li id="to-experience" class="menu-item text"><a class="int-link" href="./#experience" ><span>The Experience</span></a></li>
-						<li id="to-book" class="menu-item text"><a class="int-link" href="./#the-book" ><span>The Book</span></a></li>
-						<li id="to-whatitis" class="menu-item text"><a class="int-link" href="" ><span>FAQ</span></a></li>
-						<li class="menu-item"><a href="" ><span class="icon-user"></span></a></li>
-						<!-- <li class="menu-item"><a href="" class=""><span>Subscribe</span></a></li>
-						<li class="menu-item"><a href="" class=""><span>Give a Gift</span></a></li> -->
-					</ul>
-				</nav>
 			</div>
 			<div class="titles">
 				<h1 class="landing-titles main-title">The Reading Dragon</h1>
@@ -156,7 +158,7 @@
 		})
 
 		// slow transition to anchor
-		var $button = $('body').find('.button');
+		const $button = $('body').find('.button');
 		var pressed = false;
 		$button
 			.on('touchstart click', function(ev){
@@ -199,27 +201,80 @@
 				}
 			})
 		
-		const containerMenu = document.getElementById('container-menu');
-		const backToTop = document.getElementById('back-to-top');
-		// $containerMenu.style.position = 'fixed';
-		console.log(containerMenu.style.position);
+		const $containerMenu = $('#container-menu');
+		const $nav = $containerMenu.find('nav');
+		const $register = $containerMenu.find('.register');
+		const $menuEffect = $('#menu-effect');
+		// const $itemIconUser = 
+		const $backToTop = $('#back-to-top');
+		
+
+		var posY = 0;
 		window.addEventListener("scroll",function(e){
-			if (window.scrollY >= 120) {
-				backToTop.style.display = 'inline-block';
-				containerMenu.style.position = 'fixed';
-				containerMenu.style.height = 0;
-			} else {
-				backToTop.style.display = 'none';
-				containerMenu.style.position = 'absolute';
-				containerMenu.style.height = '100px';
+			posY = window.scrollY;
+			if (posY < 80) {
+				$backToTop.hide()
+				$register.removeAttr('style')
+				$menuEffect.removeAttr('style').show()
 			}
 
-			console.log(window.scrollY);
-			//$iphone.style.backgroundPosition = window.scrollY + "px";
-			// var position = 54 + window.scrollY;
+			if (posY >= 80 && posY < 100) {
+				$register.css({
+					'top': '0',
+					'right': '130px',
+					'position': 'fixed',
+				}).hide().appendTo($containerMenu)
+				$menuEffect.css({
+					'background-color':'#0D1D32',
+					'height': '60px',
+					'opacity': '.5'
+				}).hide()
+				$containerMenu.removeAttr('style').show()
+				// 	.off( "mouseenter mouseleave" );
+			}
+
+			if (posY >= 100){
+				$containerMenu.css({
+					'position':'fixed'
+				})
+				
+				$register.fadeIn(400)
+			}
+
+			
+
+			if (posY >= 200) {
+				$backToTop
+					.fadeIn(400);
+				
+			}
+
+			// console.log(posY);
+			//$iphone.style.backgroundPosition = posY + "px";
+			// var position = 54 + posY;
 			// $mask.style.backgroundPosition = "-" + position + "px";
 			// $iphone.style.transform = "rotateY(" + position * -.12 + "deg)";
 		});
+
+		
+		$containerMenu
+			.hover(function() {
+				/* Stuff to do when the mouse enters the element */
+				if (posY >= 200) {
+					$menuEffect
+						.slideDown()
+						.stop(true, true)
+				}
+			}, function() {
+				/* Stuff to do when the mouse leaves the element */
+				if (posY >= 200) {
+					$menuEffect
+						.stop(true, true)
+						.delay(500)
+						.slideUp()
+				}
+				
+			});
 
 		
 		$(window).scroll(function(){

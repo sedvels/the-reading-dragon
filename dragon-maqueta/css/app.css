@@ -92,7 +92,7 @@ h4 {
 	bottom: 20vh;
 	border-radius: 3px;
 	color: white;
-	display: none;
+	display: inline-block;
 	height: 40px;
 	opacity: .6;
 	position: fixed;
@@ -175,8 +175,23 @@ header .titles {
 	font-size: 20px;
 }
 
-.register {
+.container-menu {
+	display: inline-block;
+    height: 100px;
+    overflow: hidden;
+	position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+.container-menu #menu-effect {
 	height: 100%;
+	position: relative;
+	width: 100%;
+}
+
+.register {
 	display: inline-block;
 	position: absolute;
 	text-align: center;
@@ -199,15 +214,6 @@ header .titles {
     right: -10px;
     transform: rotate(40deg);
     top: -15px;
-}
-
-.container-menu {
-    height: 100px;
-    overflow: hidden;
-	position: absolute;
-    right: 0;
-    width: 100%;
-    z-index: 200;
 }
 
 .menu-nav {
