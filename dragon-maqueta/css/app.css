@@ -3,6 +3,7 @@
 	color: #0D1D32;
 	font-family: 'Libre Baskerville', serif;
 	font-size: 14px;
+	list-style-type: none;
 	margin: 0 auto;
 	padding: 0;
 	text-decoration: none;
@@ -365,6 +366,29 @@ section#experience {
 	height: 95%;
 	width: 95%;
 }
+
+section#the-book > div {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+section#the-book .books{
+	align-content: space-around;
+	align-items: center;
+	display: flex;
+}
+
+section#the-book > .books > .book{
+	margin: 15px;
+}
+
+section#the-book .books img {
+	height: 180px;line-height: 180px;
+	text-align: center;
+	width: 120px;
+}
+
 
 footer {
 	background-color: #0D1D32;
